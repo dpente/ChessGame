@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     bool kingDead = false;
     public GameObject fromHighlight;
     public GameObject toHighlight;
+    Minimax minimax;
 
     private static GameManager instance;    
     public static GameManager Instance
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         board = BoardManager.Instance;        
         board.SetupBoard();
+        minimax = Minimax.Instance;
     }
 
     private void Update()
@@ -54,19 +56,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(playerTurn + " wins!");        
         else if (!kingDead)
         {                     
-            MoveFunction movement = new MoveFunction(board);
-            MoveData move = null;
-            for (int y = 0; y < 8; y++)                
-                for (int x = 0; x < 8; x++)            
-                {
-                    TileData tile = board.GetTileFromBoard(new Vector2(x, y));
-                    if(tile.CurrentPiece != null && tile.CurrentPiece.Team == playerTurn)
-                    {
-                        List<MoveData> pieceMoves = movement.GetMoves(tile.CurrentPiece, tile.Position);
-                        if(pieceMoves.Count > 0)                        
-                            move = pieceMoves[0];                        
-                    }
-                }
+            MoveData move = minimax.GetMove();
         
             RemoveObject("Highlight");
             ShowMove(move);
