@@ -132,7 +132,7 @@ public class Minimax : MonoBehaviour
         gameManager = GameManager.Instance;
         bestMove = CreateMove(board.GetTileFromBoard(new Vector2(0, 0)), board.GetTileFromBoard(new Vector2(0, 0)));
 
-        maxDepth = 5;
+        maxDepth = 2;
         CalculateMinMax(maxDepth, true);
 
         return bestMove;
@@ -149,6 +149,7 @@ public class Minimax : MonoBehaviour
         {
             int maxScore = int.MinValue;
             List<MoveData> allMoves = GetMoves(gameManager.playerTurn);
+            allMoves = Shuffle(allMoves);
             foreach (MoveData move in allMoves)
             {
                 moveStack.Push(move);
@@ -173,6 +174,7 @@ public class Minimax : MonoBehaviour
             PlayerTeam opponent = gameManager.playerTurn == PlayerTeam.WHITE ? PlayerTeam.BLACK : PlayerTeam.WHITE;
             int minScore = int.MaxValue;
             List<MoveData> allMoves = GetMoves(opponent);
+            allMoves = Shuffle(allMoves);
             foreach (MoveData move in allMoves)
             {
                 moveStack.Push(move);
@@ -187,4 +189,17 @@ public class Minimax : MonoBehaviour
             return minScore;
         }
     }
+
+    public List<T> Shuffle<T>(List<T> list)  
+{  
+    int n = list.Count;  
+    while (n > 1) {  
+        n--;  
+        int k = Random.Range(0,n);  
+        T value = list[k];  
+        list[k] = list[n];  
+        list[n] = value;  
+    }  
+    return list;
+}
 }
