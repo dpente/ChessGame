@@ -29,19 +29,9 @@ public class Minimax : MonoBehaviour
         else if (instance != this)        
             Destroy(this);    
     }
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
 
-        MoveData CreateMove(TileData from, TileData to)
+    MoveData CreateMove(TileData from, TileData to)
     {
         MoveData tempMove = new MoveData
         {
