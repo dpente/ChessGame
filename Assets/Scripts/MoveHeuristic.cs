@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//The scores useds to wiegh each move outcome.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

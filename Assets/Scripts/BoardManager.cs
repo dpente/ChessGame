@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Sets up the boards tiles
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

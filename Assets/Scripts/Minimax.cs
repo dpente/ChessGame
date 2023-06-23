@@ -1,3 +1,4 @@
+//The minimax algarithim that determins each ai move. contains alpha beta pruning.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

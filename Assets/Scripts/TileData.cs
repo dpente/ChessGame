@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Sets current tile information, such as which piece is on which tile.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

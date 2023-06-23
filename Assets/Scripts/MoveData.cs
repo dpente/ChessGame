@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//stores basic move data for each piece
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

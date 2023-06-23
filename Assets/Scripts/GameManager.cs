@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//calls functions to set pieces, take pieces, call ai moves, win conditions.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

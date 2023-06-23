@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Sets up the chess pieces
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

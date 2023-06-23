@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Moves each piece during minimax algarithim and sets final move based on minimax outcome
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
