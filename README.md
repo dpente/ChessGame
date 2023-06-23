@@ -9,4 +9,4 @@ Open the project in unity and run the scene with the play button.
 
 ### Features
 - Minimax algorithim
--Alpha beta pruning
+- Alpha beta pruning
